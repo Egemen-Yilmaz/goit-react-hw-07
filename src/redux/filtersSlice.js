@@ -1,7 +1,30 @@
-// TODO: Implement filters slice with createSlice and changeFilter reducer.
+import { createSlice } from '@reduxjs/toolkit';
 
-export const filtersReducer = (state = { name: '' }) => state;
+// Başlangıç durumu
+// Filtre için başlangıç state'i boş bir string olmalı
+const initialState = {
+  name: '', // Arama filtresi için değer
+};
 
-export const changeFilter = () => ({ type: 'filters/changeFilter' });
+// Filters slice'ı oluşturuluyor
+const filtersSlice = createSlice({
+  name: 'filters',
+  initialState,
+  reducers: {
+    // changeFilter reducer'ı
+    // name alanını günceller
+    // action.payload = yeni filtre değeri (string)
+    changeFilter: (state, action) => {
+      state.name = action.payload;
+    },
+  },
+});
 
+// Action creator'ı dışa aktarıyoruz
+export const { changeFilter } = filtersSlice.actions;
+
+// Selector fonksiyonu - State'ten filtre değerini alır
 export const selectNameFilter = (state) => state.filters.name;
+
+// Reducer'ı default export olarak dışa aktarıyoruz
+export default filtersSlice.reducer;

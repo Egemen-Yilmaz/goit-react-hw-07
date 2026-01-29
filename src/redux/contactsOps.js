@@ -1,5 +1,40 @@
-// TODO: Implement async thunks with createAsyncThunk + axios.
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-export const fetchContacts = null;
-export const addContact = null;
-export const deleteContact = null;
+axios.defaults.baseURL = 'https://6978c9cdcd4fe130e3da39a4.mockapi.io';
+
+export const fetchContacts = createAsyncThunk(
+  'contacts/fetchAll',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get('/contacts');
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const addContact = createAsyncThunk(
+  'contacts/addContact',
+  async (contactData, thunkAPI) => {
+    try {
+      const response = await axios.post('/contacts', contactData);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const deleteContact = createAsyncThunk(
+  'contacts/deleteContact',
+  async (contactId, thunkAPI) => {
+    try {
+      const response = await axios.delete(`/contacts/${contactId}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

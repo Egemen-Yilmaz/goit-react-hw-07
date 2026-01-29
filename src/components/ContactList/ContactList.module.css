@@ -1,4 +1,6 @@
 .list {
+  margin: 24px 0 0;
   padding: 0;
-  /* TODO: Contact list styles */
+  display: grid;
+  gap: 16px;
 }
