@@ -1,6 +1,11 @@
 # goit-react-hw-07
 
-Bu depo, GoIT React 07 ödevi için temel proje iskeletini içerir.
+GoIT React 07 ödevi: Kişi Rehberi uygulaması (Redux Toolkit + MockAPI).
+
+## Canlı bağlantılar
+
+- GitHub Repo: https://github.com/Egemen-Yilmaz/goit-react-hw-07
+- Vercel Deploy: https://goit-react-hw-07-ashy-rho.vercel.app
 
 ## İçerik
 
@@ -9,15 +14,10 @@ Bu depo, GoIT React 07 ödevi için temel proje iskeletini içerir.
 - CSS Module klasör yapısı
 - Prettier yapılandırması
 
-## TODO (senin doldurman için)
+## Kullanılan teknolojiler
 
-- `src/redux/contactsOps.js` içinde async işlemleri (axios + createAsyncThunk)
-- `src/redux/contactsSlice.js` içinde slice + extraReducers + selectFilteredContacts
-- `src/redux/filtersSlice.js` içinde slice + changeFilter
-- `src/main.jsx` içinde `<Provider store={store}>`
-- Bileşenlerin JSX içeriği ve stilleri
-- MockAPI backend URL ayarları
-
-## Not
-
-Kod iskeleti minimal tutuldu. Uygulamayı çalıştırmadan önce ilgili TODO alanlarını doldurmalısın.
+- Vite + React
+- Redux Toolkit
+- Axios
+- Formik + Yup
+- CSS Modules
